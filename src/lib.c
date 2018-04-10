@@ -95,7 +95,7 @@ ENetPeer* client_connect(ENetHost* client, const char* host_address, enet_uint16
   if (enet_host_service (client, & event, 5000) > 0 &&
         event.type == ENET_EVENT_TYPE_CONNECT)
    {
-    puts ("Connection to some.server.net:1234 succeeded.");
+    puts ("Connection to server:1234 succeeded.");
     return peer;
     //
     //
@@ -107,7 +107,7 @@ ENetPeer* client_connect(ENetHost* client, const char* host_address, enet_uint16
     /* received. Reset the peer in the event the 5 seconds   */
     /* had run out without any significant event.            */
     enet_peer_reset (peer);
-    puts ("Connection to some.server.net:1234 failed.");
+    puts ("Connection to server:1234 failed.");
     return NULL;
    }
 }
